@@ -74,7 +74,7 @@
                 android:ellipsize="end"
 
                 app:layout_constraintLeft_toRightOf="@id/repoOwnerAvatarCard"
-                app:layout_constraintRight_toLeftOf="@id/expandArrowCard"
+                app:layout_constraintRight_toLeftOf="@id/expandArrow"
                 app:layout_constraintBottom_toTopOf="@id/guideline"
 
                 tools:text="Репозиторий 1"/>
@@ -108,31 +108,18 @@
 
                 tools:text="Автор 1 Автор 1 Автор 1 Автор 1 " />
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/expandArrowCard"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="?selectableItemBackground"
+            <ImageView
+                android:id="@+id/expandArrow"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_baseline_arrow_drop_down_24"
 
+                app:tint="@color/white"
                 app:layout_constraintLeft_toRightOf="@id/repoName"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-
-                app:cardElevation="0dp"
-                app:cardCornerRadius="24dp"
-                app:cardPreventCornerOverlap="false">
-
-                <ImageView
-                    android:id="@+id/expandArrow"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/ic_baseline_arrow_drop_down_24"
-
-                    app:tint="@color/appBarBackground" />
-
-            </androidx.cardview.widget.CardView>
+                app:layout_constraintBottom_toBottomOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

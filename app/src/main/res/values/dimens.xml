@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Common-->
+    <dimen name="mediumMargin">16dp</dimen>
+    <dimen name="smallMargin">8dp</dimen>
+    <dimen name="tinyMargin">4dp</dimen>
+
+    <!--Repo-->
+    <dimen name="repoItemHeaderHeight">64dp</dimen>
+</resources>

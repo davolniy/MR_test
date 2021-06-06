@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#FFFFFF</color>
+    <color name="colorAccent">#424242</color>
+
+    <!--Common-->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#212121</color>
+    <color name="transparent">@android:color/transparent</color>
+    <color name="windowBackground">@color/white</color>
+
+    <!--AppBar-->
+    <color name="appBarBackground">@color/colorAccent</color>
+
+    <!--Repo-->
+    <color name="repoItemHeaderBackground">@color/colorAccent</color>
 </resources>

@@ -1,3 +1,16 @@
 <resources>
+    <!--Common-->
     <string name="app_name">MR_test</string>
+    <string name="retry">Повторить</string>
+    <string name="network_error">Ошибка сети</string>
+    <string name="not_found">К сожалению, ничего не найдено</string>
+
+    <!--Repo-->
+    <string name="repo_list_app_bar_title">Репозитории</string>
+    <string name="repo_detail_app_bar_title">Репозитории</string>
+    <string name="repo_detail_button_title">Подробнее</string>
+    <string name="no_repos_found">К сожалению, репозитории не найдены</string>
+    <string name="repo_id_title">Id: %1d</string>
+    <string name="repo_owner_title">Owner: %1s</string>
+
 </resources>

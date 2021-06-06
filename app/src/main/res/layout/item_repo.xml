@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    app:cardCornerRadius="@dimen/mediumMargin"
+    app:cardElevation="10dp"
+
+    tools:layout_margin="@dimen/mediumMargin">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/repoLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/repoHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/repo_header_background"
+            android:padding="@dimen/mediumMargin"
+            android:translationZ="4dp"
+
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/repoDescriptionContainer">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/repoOwnerAvatarCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/repoName"
+
+                app:cardElevation="0dp"
+                app:cardCornerRadius="24dp"
+                app:cardPreventCornerOverlap="false">
+
+                <ImageView
+                    android:id="@+id/repoOwnerAvatar"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:scaleType="centerCrop"
+
+                    tools:src="@drawable/ic_baseline_arrow_drop_down_24"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+
+                app:layout_constraintGuide_percent="0.5"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/repoName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/smallMargin"
+                android:layout_marginStart="@dimen/smallMargin"
+                android:textAppearance="@style/TextAppearance.Repo.Name"
+                android:maxLines="1"
+                android:ellipsize="end"
+
+                app:layout_constraintLeft_toRightOf="@id/repoOwnerAvatarCard"
+                app:layout_constraintRight_toLeftOf="@id/expandArrowCard"
+                app:layout_constraintBottom_toTopOf="@id/guideline"
+
+                tools:text="Репозиторий 1"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/repoId"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/smallMargin"
+                android:layout_marginTop="@dimen/tinyMargin"
+                android:textAppearance="@style/TextAppearance.Repo.Owner"
+
+                app:layout_constraintLeft_toLeftOf="@id/repoName"
+                app:layout_constraintRight_toLeftOf="@id/repoOwnerName"
+                app:layout_constraintTop_toBottomOf="@id/guideline"
+                app:layout_constraintHorizontal_weight="0.35"
+
+                tools:text="Id 1"/>
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/repoOwnerName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.Repo.Owner"
+
+                app:layout_constraintHorizontal_weight="0.8"
+                app:layout_constraintLeft_toRightOf="@id/repoId"
+                app:layout_constraintRight_toRightOf="@id/repoName"
+                app:layout_constraintTop_toTopOf="@id/repoId"
+
+                tools:text="Автор 1 Автор 1 Автор 1 Автор 1 " />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/expandArrowCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackground"
+
+                app:layout_constraintLeft_toRightOf="@id/repoName"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+
+                app:cardElevation="0dp"
+                app:cardCornerRadius="24dp"
+                app:cardPreventCornerOverlap="false">
+
+                <ImageView
+                    android:id="@+id/expandArrow"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_baseline_arrow_drop_down_24"
+
+                    app:tint="@color/appBarBackground" />
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/repoDescriptionContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/mediumMargin"
+            android:paddingEnd="@dimen/mediumMargin"
+            android:paddingTop="@dimen/smallMargin"
+            android:paddingBottom="@dimen/smallMargin"
+            android:visibility="gone"
+
+            app:layout_constraintTop_toBottomOf="@id/repoHeader"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+
+            tools:visibility="visible">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/repoDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.Repo.Description"
+
+                tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."/>
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                android:id="@+id/repoDetailButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/smallMargin"
+                android:backgroundTint="@color/colorAccent"
+                android:textAppearance="@style/TextAppearance.Button.Accent"
+                android:text="@string/repo_detail_button_title"/>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

@@ -59,8 +59,10 @@ class MainActivity : BaseActivity(), MainView {
         Toothpick.openScopes(Scopes.APP_SCOPE, Scopes.MAIN_SCOPE).apply {
             Toothpick.inject(this@MainActivity, this)
         }.installModules(MainModule())
-        super.onCreate(null)
-        presenter.startRoot()
+        super.onCreate(savedInstanceState)
+        if (savedInstanceState == null) {
+            presenter.startRoot()
+        }
     }
 
     override fun onDestroy() {

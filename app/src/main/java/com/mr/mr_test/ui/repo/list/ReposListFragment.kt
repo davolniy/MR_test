@@ -83,10 +83,6 @@ class ReposListFragment : BaseFragment(), ReposListView {
         adapter.setData(data)
     }
 
-    override fun updateItem(item: RepoWrapper, position: Int) {
-        adapter.updateItem(item, position)
-    }
-
     override fun showRefreshProgress(show: Boolean) {
         swipeRefreshLayout.run {
             post {
@@ -123,12 +119,6 @@ class ReposListFragment : BaseFragment(), ReposListView {
             items.addAll(data)
 
             notifyDataSetChanged()
-        }
-
-        fun updateItem(item: RepoWrapper, position: Int) {
-            items[position] = item
-
-            notifyItemChanged(position)
         }
 
         override fun getItemId(position: Int): Long = items[position].repo.id

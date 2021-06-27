@@ -51,7 +51,7 @@ class ReposListPresenter @Inject constructor(
         expandedStates[repoId] = !(expandedStates[repoId] ?: defaultExpanded)
         val index = currentData.indexOfFirst { it.id == repoId }
         if (index >= 0) {
-            viewState.updateItem(getItemWrapper(currentData[index]), index)
+            showData()
         }
     }
 
